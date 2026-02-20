@@ -1,0 +1,11 @@
+{
+  "liveServer.settings.port": 5501,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.html": "html"
+  },
+  "emmet.includeLanguages": {
+    "html": "html"
+  }
+}
