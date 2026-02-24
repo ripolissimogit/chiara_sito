@@ -484,18 +484,22 @@
 
   .ai-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
     margin-top: 64px;
   }
 
-  /* Quando ci sono 5 card in 3 colonne, le ultime 2 si espandono */
-  .ai-grid .ai-card:nth-child(4) {
-    grid-column: 1 / 2;
+  /* 5 card: prime 3 occupano 2 colonne ciascuna (= 3 card uguali) */
+  .ai-grid .ai-card:nth-child(1),
+  .ai-grid .ai-card:nth-child(2),
+  .ai-grid .ai-card:nth-child(3) {
+    grid-column: span 2;
   }
 
+  /* Ultime 2 card centrate: 3 colonne ciascuna */
+  .ai-grid .ai-card:nth-child(4),
   .ai-grid .ai-card:nth-child(5) {
-    grid-column: 2 / 4;
+    grid-column: span 3;
   }
 
   .ai-card {
@@ -943,9 +947,13 @@
     .corsi-grid { grid-template-columns: 1fr 1fr; }
 
     .ai-section { padding: 80px 24px; }
-    .ai-grid { grid-template-columns: 1fr 1fr; margin-top: 48px; }
+    .ai-grid { grid-template-columns: repeat(2, 1fr); margin-top: 48px; }
+    .ai-grid .ai-card:nth-child(1),
+    .ai-grid .ai-card:nth-child(2),
+    .ai-grid .ai-card:nth-child(3),
     .ai-grid .ai-card:nth-child(4),
     .ai-grid .ai-card:nth-child(5) { grid-column: span 1; }
+    .ai-grid .ai-card:nth-child(5) { grid-column: 1 / -1; }
     .ai-card { padding: 28px 24px; }
 
     .contact { padding: 80px 24px; }
@@ -960,6 +968,11 @@
     .hero-text { font-size: 16px; }
     .corsi-grid { grid-template-columns: 1fr; }
     .ai-grid { grid-template-columns: 1fr; }
+    .ai-grid .ai-card:nth-child(1),
+    .ai-grid .ai-card:nth-child(2),
+    .ai-grid .ai-card:nth-child(3),
+    .ai-grid .ai-card:nth-child(4),
+    .ai-grid .ai-card:nth-child(5) { grid-column: span 1; }
   }
 </style>
 </head>
